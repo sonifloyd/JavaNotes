@@ -1,0 +1,6 @@
+How to prevent a class  from being subclassed in java.
+when a final modifier is used than a class is not being extented futhure.
+Q.can we overide static method.
+No b/c ovride based on dynamic binding at run time at run time.
+Can we access private mehods in java 
+yes with in class we can access 
