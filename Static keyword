@@ -1,0 +1,37 @@
+What is the static variable?
+The static variable is used to refer to the common property of all objects (that is not unique for each object), e.g., 
+The company name of employees, college name of students, etc. Static variable gets memory only once in the class area at the time of class loading.
+Using a static variable makes your program more memory efficient (it saves memory). Static variable belongs to the class rather than the object.
+#What is the static method?
+A static method belongs to the class rather than the object.
+There is no need to create the object to call the static methods.
+A static method can access and change the value of the static variable.
+#What are the restrictions that are applied to the Java static methods?
+Two main restrictions are applied to the static methods.
+
+The static method can not use non-static data member or call the non-static method directly.
+this and super cannot be used in static context as they are non-static.
+#Why is the main method static?
+Because the object is not required to call the static method. If we make the main method non-static, 
+JVM will have to create its object first and then call main() method which will lead to the extra memory allocation.
+
+#Can we override the static methods?
+No, we can't override static methods.
+
+#What is the static block?
+Static block is used to initialize the static data member. It is executed before the main method, at the time of classloading.
+
+class A2{  
+  static{System.out.println("static block is invoked");}  
+  public static void main(String args[]){  
+   System.out.println("Hello main");  
+  }  
+}  
+Output: static block is invoked
+       Hello main
+       
+       #Can we execute a program without main() method?
+Ans) Yes, one of the ways to execute the program without the main method is using static block.
+
+#What if the static modifier is removed from the signature of the main method?
+Program compiles. However, at runtime, It throws an error "NoSuchMethodError."
