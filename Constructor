@@ -51,3 +51,20 @@ The constructor with the 2 arguments is called, and i will be initialized with t
 No, the constructor can't be final.
 #Is constructor inherited?
 No, The constructor is not inherited.
+
+#Can you make a constructor final?
+No, the constructor can't be final.
+#Does constructor return any value?
+Ans: yes, The constructor implicitly returns the current instance of the class (You can't use an explicit return type with the constructor).
+#What is the purpose of a default constructor?
+The purpose of the default constructor is to assign the default value to the objects. The java compiler creates a default constructor 
+implicitly if there is no constructor in the class.
+#How many types of constructors are used in Java?
+Based on the parameters passed in the constructors, there are two types of constructors in Java.
+
+Default Constructor: default constructor is the one which does not accept any value. The default constructor is mainly used to initialize the instance variable with the default values. It can also be used for performing some useful task on object creation. A default constructor is invoked implicitly by the compiler if there is no constructor defined in the class.
+Parameterized Constructor: The parameterized constructor is the one which can initialize the instance variables with the given values. In other words, we can say that the constructors
+which can accept the arguments are called parameterized constructors.
+#What is the constructor?
+The constructor can be defined as the special type of method that is used to initialize the state of an object. It is invoked when the class is instantiated, and the memory is allocated for the object. Every time, an object is created using the new keyword, the default constructor of the class is called. The name of the constructor must be similar to the class name. 
+The constructor must not have an explicit return type.
