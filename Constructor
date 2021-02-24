@@ -1,1 +1,53 @@
+# What are the differences between the constructors and methods?
+There are many differences between constructors and methods. They are given below.
 
+Java Constructor	Java Method
+A constructor is used to initialize the state of an object.	A method is used to expose the behavior of an object.
+A constructor must not have a return type.	A method must have a return type.
+The constructor is invoked implicitly.	The method is invoked explicitly.
+The Java compiler provides a default constructor if you don't have any constructor in a class.	The method is not provided by the compiler in any case.
+The constructor name must be same as the class name.	The method name may or may not be same as class name.
+
+# Can we overload the constructors?
+Yes, the constructors can be overloaded by changing the number of arguments accepted by the constructor or by changing the data type of the parameters. Consider the following example.
+
+class Test   
+{  
+    int i;   
+    public Test(int k)  
+    {  
+        i=k;  
+    }  
+    public Test(int k, int m)  
+    {  
+        System.out.println("Hi I am assigning the value max(k, m) to i");  
+        if(k>m)  
+        {  
+            i=k;   
+        }  
+        else   
+        {  
+            i=m;  
+        }  
+    }  
+}  
+public class Main   
+{  
+    public static void main (String args[])   
+    {  
+        Test test1 = new Test(10);  
+        Test test2 = new Test(12, 15);  
+        System.out.println(test1.i);  
+        System.out.println(test2.i);  
+    }  
+}  
+      
+In the above program, The constructor Test is overloaded with another constructor. In the first call to the constructor,
+The constructor with one argument is called, and i will be initialized with the value 10. However, In the second call to the constructor,
+The constructor with the 2 arguments is called, and i will be initialized with the value 15
+
+
+#Can you make a constructor final?
+No, the constructor can't be final.
+#Is constructor inherited?
+No, The constructor is not inherited.
