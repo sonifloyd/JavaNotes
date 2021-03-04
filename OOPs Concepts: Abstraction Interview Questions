@@ -1,0 +1,109 @@
+107) What is the abstraction?
+Abstraction is a process of hiding the implementation details and showing only functionality to the user. 
+It displays just the essential things to the user and hides the internal information, for example, sending SMS where you type the text and send the message.
+You don't know the internal processing about the message delivery. Abstraction enables you to focus on what the object does instead of how it does it. 
+Abstraction lets you focus on what the object does instead of how it does it.
+
+In Java, there are two ways to achieve the abstraction.
+
+Abstract Class
+Interface
+
+108) What is the difference between abstraction and encapsulation?
+Abstraction hides the implementation details whereas encapsulation wraps code and data into a single unit.
+
+
+109) What is the abstract class?
+A class that is declared as abstract is known as an abstract class. It needs to be extended and its method implemented. It cannot be instantiated. It can have abstract methods, non-abstract methods, constructors, and static methods. It can also have the final methods which will force the subclass not to change the body of the method. Consider the following example.
+
+abstract class Bike{  
+  abstract void run();  
+}  
+class Honda4 extends Bike{  
+void run(){System.out.println("running safely");}  
+public static void main(String args[]){  
+ Bike obj = new Honda4();  
+ obj.run();  
+}  
+}  
+Test it Now
+Output
+
+running safely
+
+110) Can there be an abstract method without an abstract class?
+No, if there is an abstract method in a class, that class must be abstract.
+
+123) What are the advantages of Encapsulation in Java?
+There are the following advantages of Encapsulation in Java?
+
+By providing only the setter or getter method, you can make the class read-only or write-only. In other words, you can skip the getter or setter methods.
+It provides you the control over the data. Suppose you want to set the value of id which should be greater than 100 only, you can write the logic inside the setter method. You can write the logic not to store the negative numbers in the setter methods.
+It is a way to achieve data hiding in Java because other class will not be able to access the data through the private data members.
+The encapsulate class is easy to test. So, it is better for unit testing.
+The standard IDE's are providing the facility to generate the getters and setters. So, it is easy and fast to create an encapsulated class in Java.
+
+
+
+122) How to make a write-only class in Java?
+A class can be made write-only by making all of the fields private. The write-only class will have only setter methods which set the value passed from the main method to the private fields. We cannot read the properties of the class because there is no getter method in this class. Consider the following example.
+
+  //A Java class which has only setter methods.    
+public class Student{    
+//private data member    
+private String college;    
+//getter method for college    
+public void setCollege(String college){    
+this.college=college;    
+}    
+}    
+
+120) When can an object reference be cast to an interface reference?
+An object reference can be cast to an interface reference when the object implements the referenced interface.
+
+119) Can we define private and protected modifiers for the members in interfaces?
+No, they are implicitly public.
+
+
+
+118) What are the differences between abstract class and interface?
+Abstract class	Interface
+An abstract class can have a method body (non-abstract methods).	The interface has only abstract methods.
+An abstract class can have instance variables.	An interface cannot have instance variables.
+An abstract class can have the constructor.	The interface cannot have the constructor.
+An abstract class can have static methods.	The interface cannot have static methods.
+You can extend one abstract class.	You can implement multiple interfaces.
+The abstract class can provide the implementation of the interface.	The Interface can't provide the implementation of the abstract class.
+The abstract keyword is used to declare an abstract class.	The interface keyword is used to declare an interface.
+An abstract class can extend another Java class and implement multiple Java interfaces.	An interface can extend another Java interface only.
+An abstract class can be extended using keyword extends	An interface class can be implemented using keyword implements
+A Java abstract class can have class members like private, protected, etc.	Members of a Java interface are public by default.
+
+117) What is a marker interface?
+A Marker interface can be defined as the interface which has no data member and member functions. For example, Serializable, Cloneable are marker interfaces. The marker interface can be declared as follows.
+
+public interface Serializable{    
+}    
+
+
+116) Can the Interface be final?
+No, because an interface needs to be implemented by the other class and if it is final, it can't be implemented by any class.
+
+115) Can you declare an interface method static?
+No, because methods of an interface are abstract by default, and we can not use static and abstract together.
+
+
+
+114) What is the interface?
+The interface is a blueprint for a class that has static constants and abstract methods. It can be used to achieve full abstraction and multiple inheritance. 
+It is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple 
+inheritance in Java. In other words, you can say that interfaces can have abstract methods and variables. Java Interface also represents the IS-A relationship.
+It cannot be instantiated just like the abstract class. However, we need to implement it to define its methods. 
+
+
+112) Can you use abstract and final both with a method?
+No, because we need to override the abstract method to provide its implementation, whereas we can't override the final method.
+
+113) Is it possible to instantiate the abstract class?
+No, the abstract class can never be instantiated even if it contains a constructor and all of its methods are implemented.
+Since Java 8, we can have the default, static, and private methods in an interface.
