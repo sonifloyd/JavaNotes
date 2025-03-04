@@ -80,8 +80,41 @@ public class Test {
     }
 }
 
+
+
 5. Exception Handling
 Q: What is the difference between Checked and Unchecked Exceptions?
 Checked Exception	Unchecked Exception
 Must be handled at compile time	Handled at runtime
 Example: IOException, SQLException	Example: NullPointerException, ArithmeticException
+
+6Q: Write a function to check if a string has balanced parentheses.
+
+import java.util.Stack;
+
+public class BalancedParentheses {
+    public static boolean isBalanced(String str) {
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : str.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[') {
+                stack.push(c);
+            } else if (c == ')' && !stack.isEmpty() && stack.peek() == '(') {
+                stack.pop();
+            } else if (c == '}' && !stack.isEmpty() && stack.peek() == '{') {
+                stack.pop();
+            } else if (c == ']' && !stack.isEmpty() && stack.peek() == '[') {
+                stack.pop();
+            } else {
+                return false;
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        String str = "{[()]}";
+        System.out.println(isBalanced(str));  // Output: true
+    }
+}
+
