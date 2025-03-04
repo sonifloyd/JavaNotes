@@ -1,0 +1,87 @@
+Q: How do you create a thread-safe Singleton in Java?
+
+class Singleton {
+    private static volatile Singleton instance;
+
+    private Singleton() {} 
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+
+
+3. OOPS Concepts
+Q: What is Polymorphism? Explain with an example.
+Answer: Polymorphism allows objects to take multiple forms (Method Overloading or Method Overriding).
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal obj = new Dog();
+        obj.sound();  // Output: Dog barks
+    }
+}
+
+4. Multithreading
+Q: What is Synchronization?
+Answer:
+Synchronization is used to control the access of multiple threads to shared resources.
+
+class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter();
+
+        Thread t1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) counter.increment();
+        });
+
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) counter.increment();
+        });
+
+        t1.start();
+        t2.start();
+
+        t1.join();
+        t2.join();
+
+        System.out.println("Count: " + counter.getCount());
+    }
+}
+
+5. Exception Handling
+Q: What is the difference between Checked and Unchecked Exceptions?
+Checked Exception	Unchecked Exception
+Must be handled at compile time	Handled at runtime
+Example: IOException, SQLException	Example: NullPointerException, ArithmeticException
