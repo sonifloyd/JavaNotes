@@ -1,0 +1,7 @@
+
+Feature	List	Set	Map
+Duplicate Elements	Allowed	Not Allowed	Keys: Not Allowed, Values: Allowed
+Order Maintained	Yes (Insertion Order)	No (Depends on Implementation)	No (Depends on Implementation)
+Null Values	Allowed (Single or Multiple)	Allowed (Only Once)	One Null Key, Multiple Null Values
+Implementations	ArrayList, LinkedList, Vector	HashSet, LinkedHashSet, TreeSet	HashMap, LinkedHashMap, TreeMap
+Usage	Stores elements in sequence
