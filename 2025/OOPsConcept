@@ -1,0 +1,34 @@
+1. Abstraction 🔥
+👉 Abstraction ka matlab hota hai sirf essential details show karna aur unnecessary details hide karna.
+
+Example:
+java
+Copy
+Edit
+abstract class Bank {
+    abstract void interestRate(); // Abstract Method
+}
+
+class SBI extends Bank {
+    void interestRate() {
+        System.out.println("SBI Interest Rate is 7%");
+    }
+}
+
+class HDFC extends Bank {
+    void interestRate() {
+        System.out.println("HDFC Interest Rate is 8%");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Bank bank = new SBI(); // Abstraction
+        bank.interestRate();
+    }
+}
+🎯 Output:
+csharp
+Copy
+Edit
+SBI Interest Rate is 7%
