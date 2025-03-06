@@ -1,0 +1,184 @@
+What is Exception Handling in Java?👉 Exception Handling is a mechanism to handle runtime errors
+like IOException, ArithmeticException, etc.,
+without crashing the program. It ensures the normal flow of the application.
+
+1. What is Exception in Java?
+Answer:
+An Exception is an unwanted or unexpected event that occurs during program execution, 
+which disrupts the normal flow of the program.
+Example: Dividing a number by zero.
+
+2. What is the difference between Checked and Unchecked Exceptions?
+Checked Exception	Unchecked Exception
+Checked at Compile-time	Checked at Run-time
+Must be handled using try-catch or throws	No need to handle explicitly
+Example: IOException, SQLException	Example: NullPointerException, ArithmeticException
+
+3. What is the difference between throw and throws?
+throw	throws
+Used to throw exception manually	Used to declare exceptions in method signature
+Can throw only one exception	Can declare multiple exceptions
+Example: throw new ArithmeticException();	Example: public void method() throws IOException, SQLException
+
+4. What is the difference between final, finally, and finalize?
+Keyword	Meaning
+final	Used to declare constant variables or prevent inheritance
+finally	Used to execute cleanup code (always executes)
+finalize	Used by Garbage Collector before destroying objects
+
+5. Can we handle multiple exceptions in one catch block?
+Answer:
+Yes, from Java 7 onwards we can handle multiple exceptions in one catch block using pipe (|) operator.
+
+Example:
+
+
+try {
+    int a = 10 / 0;
+} catch (ArithmeticException | NullPointerException e) {
+    System.out.println("Exception handled: " + e);
+}
+
+
+6. What is the difference between try-catch and throws?
+try-catch	throws
+Used to handle exceptions inside method	Used to declare exceptions outside method
+Stops program crash	Transfers exception responsibility to calling method
+Example: try { } catch(Exception e)	Example: public void method() throws IOException
+
+
+7. What happens if there is a return statement inside finally block?
+Answer:
+If a return statement is inside both the try and finally blocks, the finally block's return will always execute.
+
+Example:
+
+public int method() {
+    try {
+        return 10;
+    } finally {
+        return 20;
+    }
+}
+Output: 20
+
+8. What is the Order of Execution in try-catch-finally?
+Answer:
+
+First, try block executes.
+If an exception occurs, control goes to catch block.
+Then, finally block always executes whether exception occurs or not.
+
+
+9. How to create a Custom Exception in Java?
+Answer: Create a custom exception by extending the Exception class.
+
+class MyException extends Exception {
+    public MyException(String message) {
+        super(message);
+    }
+}
+public class Test {
+    public static void main(String[] args) throws MyException {
+        throw new MyException("Custom Exception Occurred");
+    }
+}
+
+
+10. What is the difference between Exception and Error?
+Exception	Error
+Recoverable	Non-Recoverable
+Caused by programming mistakes	Caused by system failures
+Example: NullPointerException	Example: OutOfMemoryError
+
+
+11. What happens if an exception occurs in the catch block?
+Answer:
+If an exception occurs in the catch block, the program will terminate, and finally block will execute.
+
+12. Can we have multiple finally blocks?
+Answer:
+❌ No, there can only be one finally block with each try-catch.
+
+13. What is the best practice for Exception Handling in Java?
+Answer:
+
+Use specific exception classes instead of generic Exception.
+Always close resources using try-with-resources.
+Don't ignore exceptions with empty catch blocks.
+Use custom exceptions where necessary.
+
+
+✅ How to catch multiple exceptions in one catch block?
+Answer:
+From Java 7 onwards, you can catch multiple exceptions in a single catch block using the pipe (|) operator.
+
+Syntax:
+
+java
+Copy
+Edit
+try {
+    int a = 10 / 0;  // ArithmeticException
+    String str = null;
+    System.out.println(str.length());  // NullPointerException
+} 
+catch (ArithmeticException | NullPointerException e) {
+    System.out.println("Exception handled: " + e);
+}
+✅ Output:
+Exception handled: java.lang.ArithmeticException: / by zero
+
+
+
+✅ What is the superclass of all exceptions?
+Answer:
+The Throwable class is the Superclass of all exceptions and errors in Java.
+
+Throwable Hierarchy:
+
+Throwable
+├── Exception
+│   ├── IOException
+│   ├── SQLException
+│   ├── RuntimeException
+│       ├── NullPointerException
+│       ├── ArithmeticException
+└── Error
+    ├── OutOfMemoryError
+    ├── StackOverflowError
+
+
+Can we write finally without try?
+Answer:
+No, finally block cannot exist without try.
+
+✅ Valid Example:
+
+java
+Copy
+Edit
+try {
+    System.out.println("Try block");
+} finally {
+    System.out.println("Finally block");
+}
+
+
+public class Test {
+    public static void main(String[] args) {
+        try {
+            System.out.println("Try Block");
+            int a = 5 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Catch Block");
+        } finally {
+            System.out.println("Finally Block");
+        }
+    }
+}
+✅ Answer:
+
+Try Block  
+Catch Block  
+Finally Block
