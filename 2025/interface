@@ -1,0 +1,96 @@
+What is Interface in Java?
+In Java, an Interface is like a blueprint of a class that contains abstract methods (methods without a body) and constants (variables with final and static keywords).
+
+It is used to achieve 100% abstraction and multiple inheritance in Java.
+
+🔑 Syntax:
+java
+Copy
+Edit
+interface Animal {
+    void sound(); // Abstract method (No body)
+}
+🎯 Why do we use Interface?
+To achieve abstraction.
+To support multiple inheritance (Java doesn't support multiple inheritance using classes).
+To define common behavior across multiple classes.
+Example 🔥
+java
+Copy
+Edit
+interface Animal {
+    void sound(); // Abstract method
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat implements Animal {
+    public void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal dog = new Dog();
+        dog.sound();
+
+        Animal cat = new Cat();
+        cat.sound();
+    }
+}
+🔑 Output:
+nginx
+Copy
+Edit
+Dog barks
+Cat meows
+💪 Key Points:
+Interface	Abstract Class
+100% Abstraction	Partial Abstraction (0-100%)
+Supports Multiple Inheritance	Doesn't support Multiple Inheritance
+Only abstract methods (Before Java 8)	Can have abstract + non-abstract methods
+Variables are final and static by default	Variables are not final
+🚀 Since Java 8:
+Interfaces can have:
+
+Default methods (with body)
+Static methods
+Example:
+
+java
+Copy
+Edit
+interface A {
+    default void show() {
+        System.out.println("Default Method");
+    }
+}
+
+class B implements A {
+}
+
+public class Main {
+    public static void main(String[] args) {
+        B obj = new B();
+        obj.show();
+    }
+}
+🔥 Output:
+sql
+Copy
+Edit
+Default Method
+💡 Important Rules:
+Interface methods are public and abstract by default.
+You cannot create objects of an Interface.
+A class uses the implements keyword to inherit from an Interface.
+🎯 Interview Question:
+What is the difference between Abstract Class and Interface?
+Can we create private methods in Interface?
+What happens if two interfaces have the same default method?
+Do you want me to give Intervie
