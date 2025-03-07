@@ -1,0 +1,53 @@
+What is a Class?
+A Class is a blueprint or template that defines how objects are created and what properties and behaviors they will have.
+
+In simple terms:
+
+Class = Design/Blueprint
+Object = Actual item created from that blueprint
+🔑 Syntax of Class:
+java
+Copy
+Edit
+class Car {
+    // Properties (Variables)
+    String brand;
+    int speed;
+
+    // Behavior (Methods)
+    void drive() {
+        System.out.println(brand + " is driving at " + speed + " km/h");
+    }
+}
+✅ What is an Object?
+An Object is an instance of a Class that holds the actual data and performs actions.
+
+👉 How to create an object?
+
+java
+Copy
+Edit
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car(); // Object creation
+        myCar.brand = "BMW";
+        myCar.speed = 120;
+
+        myCar.drive(); // Calling method
+    }
+}
+🔑 Output:
+bash
+Copy
+Edit
+BMW is driving at 120 km/h
+🎯 Main Differences:
+Class	Object
+Blueprint	Real-world entity
+Doesn't occupy memory	Occupies memory
+Used to define properties and methods	Used to access properties and methods
+Example: Car	Example: BMW, Audi
+💡 Important Points:
+You can create multiple objects from one class.
+Every object has different values but follows the same structure.
+Without a class, you cannot create objects in Java.
