@@ -12,3 +12,10 @@ if (isPrime && num > 1)
     System.out.println("Prime Number");
 else
     System.out.println("Not Prime");
+
+----
+if (num <= 1) {
+    System.out.println("Not Prime");
+    return;
+}
+
