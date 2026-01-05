@@ -1,0 +1,21 @@
+String m = "World" ;
+
+System.out.println(m.contains("W")) ; // true
+
+stringName.contains("text");
+Ye boolean value return karta hai
+
+true → agar text mil gaya
+
+#IndexOf Method in string -----
+Return type: int
+index (0 ya positive) → agar mil gaya
+-1 → agar nahi mila
+String s = "Java";
+
+System.out.println(s.indexOf('J')); // 0
+System.out.println(s.indexOf('a')); // 1
+System.out.println(s.indexOf('x')); // -1
+
+
+
