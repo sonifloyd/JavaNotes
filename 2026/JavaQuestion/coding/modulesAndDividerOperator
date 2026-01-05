@@ -1,0 +1,71 @@
+Easy Trick to Remember
+
+% 10 → last digit nikalo
+
+/ 10 → last digit hatao
+
+--------------------------------------------------------------
+Division ( / ) kya karta hai?
+
+Division batata hai:
+
+kitni baar divide hua
+
+7 / 2 = 3
+6 / 2 = 3
+
+
+👉 Dono ka answer 3 hai
+👉 Par:
+
+7 divide nahi hota
+
+6 divide hota
+
+❌ Division confuse karta hai
+
+🔍 Modulus ( % ) kya karta hai?
+
+Modulus batata hai:
+
+remainder bacha ya nahi
+
+7 % 2 = 1   ❌ not divisible
+6 % 2 = 0   ✅ divisible
+
+
+✔ Perfect clear result
+
+🧠 Prime Rule (CORE LOGIC)
+
+Agar kisi i ke liye
+
+num % i == 0
+
+
+to number prime nahi hai
+
+❌ Aapka logic kyun galat ho jata hai?
+if (num / i == 0)
+
+Example:
+num = 7
+i = 2
+
+7 / 2 = 3  ❌
+
+
+Kabhi bhi 0 nahi aata jab tak num < i
+
+✅ Correct check
+if (num % i == 0)
+
+
+✨ Conclusion
+Operator	Use
+/	quotient (kitni baar divide)
+%	remainder (perfect divide?)
+--------------------------------------------
+
+
+
