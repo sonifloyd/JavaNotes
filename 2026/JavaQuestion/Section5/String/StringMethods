@@ -39,6 +39,18 @@ System.out.println(s.charAt(3)); // a
 
 --------------------------------------------
 
+String s = "Automation";
+System.out.println(s.substring(4));
+output ---
+mation
+String s = "Automation";
+System.out.println(s.substring(0, 4)); //Auto  end of index is not included 
+
+
+
+
+
+
 
 
 
