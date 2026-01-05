@@ -17,5 +17,16 @@ System.out.println(s.indexOf('J')); // 0
 System.out.println(s.indexOf('a')); // 1
 System.out.println(s.indexOf('x')); // -1
 
+----
+replace(char old, char new)
+
+Single character replace karta hai.
+
+Example
+String s = "banana";
+
+String result = s.replace('a', 'o');
+System.out.println(result); // bonono
+
 
 
