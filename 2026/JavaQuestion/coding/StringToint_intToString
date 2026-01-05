@@ -1,0 +1,17 @@
+
+string k= "10";
+String m = "6";
+
+int i = Interger.parseInt(k);
+int j = Interger.parseInt(m);
+
+System.out.print(k+m);//106
+Sytem.out.print(i+j) ; //16
+
+
+/// convert interger into string
+int i= 10 
+int j= 20 
+String l = String.valueOf(j);
+
+System.out.printl(l); // "20"
