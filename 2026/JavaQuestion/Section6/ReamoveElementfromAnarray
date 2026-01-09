@@ -1,0 +1,95 @@
+
+import java.util.Scanner;
+
+public class RemoveElement {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();        // size
+        int[] arr = new int[n];
+
+        // array input
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int remove = sc.nextInt();  // element to remove
+
+        // logic
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == remove) {
+                for (int j = i; j < n - 1; j++) {
+                    arr[j] = arr[j + 1];
+                }
+                break;
+            }
+        }
+
+        // print result
+        for (int i = 0; i < n - 1; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class RemoveElementByValue {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter size of array: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        System.out.println("Enter elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter element to remove: ");
+        int remove = sc.nextInt();
+
+        int[] newArr = new int[n - 1];
+        int index = 0;
+        boolean found = false;
+
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == remove && !found) {
+                found = true;   // skip only first occurrence
+                continue;
+            }
+            if (index < newArr.length) {
+                newArr[index++] = arr[i];
+            }
+        }
+
+        if (!found) {
+            System.out.println("Element not found");
+        } else {
+            System.out.print("Array after removal: ");
+            for (int num : newArr) {
+                System.out.print(num + " ");
+            }
+        }
+
+        sc.close();
+    }
+}
