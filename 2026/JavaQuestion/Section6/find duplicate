@@ -1,0 +1,69 @@
+Method 2: Without Extra Space (Simple logic)
+import java.util.Scanner;
+
+public class FindDuplicateNoExtra {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.print("Duplicate elements: ");
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    System.out.print(arr[i] + " ");
+                    break;
+                }
+            }
+        }
+    }
+}
+C & 💾 SC
+
+Time: O(n²)
+
+Space: O(1)
+
+--------------using hasgset--
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class FindDuplicate {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        HashSet<Integer> set = new HashSet<>();
+
+        System.out.print("Duplicate elements: ");
+        for (int i = 0; i < n; i++) {
+            if (!set.add(arr[i])) {   // already present
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
+}
+Simple Explanation
+
+HashSet duplicate allow nahi karta
+
+Agar add fail hua → duplicate mil gaya
+
+⏱️ TC & 💾 SC
+
+Time: O(n)
+
+Space: O(n)
