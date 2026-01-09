@@ -1,0 +1,41 @@
+Original array:  [1, 2, 3, 4, 5]
+Clockwise by 1:  [5, 1, 2, 3, 4]
+
+
+import java.util.Scanner;
+
+public class ClockwiseRotateByOne {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // step 1: store last element
+        int last = arr[n - 1];
+
+        // step 2: shift right
+        for (int i = n - 1; i > 0; i--) {
+            arr[i] = arr[i - 1];
+        }
+
+        // step 3: put last at first
+        arr[0] = last;
+
+        // print
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+⏱️ TC & 💾 SC
+
+Time Complexity: O(n)
+
+Space Complexity: O(1)
